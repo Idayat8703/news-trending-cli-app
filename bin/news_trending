@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require './lib/news_trending'
+
+NewsTrending::CLI.new.call
