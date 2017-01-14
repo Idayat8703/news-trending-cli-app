@@ -1,7 +1,5 @@
-require_relative "news_trending/version"
-require_relative "news_trending/trending"
-require_relative "news_trending/CLI"
+require "open-uri"
 
-module NewsTrending
-  # Your code goes here...
-end
+require_relative "news_trending/version"
+require_relative "news_trending/CLI"
+require_relative "news_trending/scraper"
