@@ -7,8 +7,9 @@ class NewsTrending::CLI
    end
 
    def list_top_articles
+     #shows a list of all the Trending news for the day using the instance of article
      puts "---------------------------------"
-     puts "| Most Trending News for Today  |"
+     puts "| Most Trending News for Today   |"
      puts "---------------------------------"
      @articles = NewsTrending::Article.today
      @articles.each.with_index(1) do |article, i|
@@ -17,6 +18,9 @@ class NewsTrending::CLI
    end
 
    def main_menu
+     #ask user for input about the articlethey would like to read
+     #returns the information for the user
+     # allows the user to diplay the articles again or to exit. 
      ans = nil
      while ans != "exit"
      puts "Please pick a number for more info about the article, type list to see the articles again, or type exit:"

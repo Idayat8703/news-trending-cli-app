@@ -1,5 +1,5 @@
 class NewsTrending::Article
-
+    # returnsan array of news from varous sections from nytimes
   attr_accessor :name, :author, :summary, :url, :source
 
   def self.today
