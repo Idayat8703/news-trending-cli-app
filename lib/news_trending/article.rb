@@ -5,7 +5,7 @@ class NewsTrending::Article
   def self.today
     articles = []
 
-    articles << NewsTrending::Scraper.scrape_nytimes
+    articles << NewsTrending::Scraper.scrape_nytimes1
     articles << NewsTrending::Scraper.scrape_nytimes2
     articles << NewsTrending::Scraper.scrape_nytimes3
     articles << NewsTrending::Scraper.scrape_nytimes4

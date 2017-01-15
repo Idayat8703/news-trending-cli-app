@@ -8,7 +8,7 @@ class NewsTrending::CLI
 
    def list_top_articles
      puts "---------------------------------"
-     puts "| Most Recent Trending News     |"
+     puts "| Most Trending News for Today  |"
      puts "---------------------------------"
      @articles = NewsTrending::Article.today
      @articles.each.with_index(1) do |article, i|
