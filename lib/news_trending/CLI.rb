@@ -1,12 +1,12 @@
 class NewsTrending::CLI
 
   def call
-     list_articles
+     list_top_articles
      puts "---------------------------------"
-     menu
+     main_menu
    end
 
-   def list_articles
+   def list_top_articles
      puts "---------------------------------"
      puts "| Most Recent Trending News     |"
      puts "---------------------------------"
@@ -16,26 +16,26 @@ class NewsTrending::CLI
      end
    end
 
-   def menu
-     input = nil
-     while input != "exit"
+   def main_menu
+     ans = nil
+     while ans != "exit"
      puts "Please pick a number for more info about the article, type list to see the articles again, or type exit:"
-       input = gets.chomp.downcase
+       ans = gets.chomp.downcase
 
-       if input.to_i > 0
-         the_article = @articles[input.to_i-1]
+       if ans.to_i > 0
+         the_first_article = @articles[ans.to_i-1]
          puts "---------------------------------"
-         puts "#{the_article.source}: "
+         puts "#{the_first_article.source}: "
          puts " "
-         puts "#{the_article.name} - #{the_article.author}"
+         puts "#{the_first_article.name} - #{the_first_article.author}"
          puts " "
-         puts " #{the_article.summary}"
+         puts " #{the_first_article.summary}"
          puts " "
-         puts "#{the_article.url}"
+         puts "#{the_first_article.url}"
          puts "---------------------------------"
-       elsif input == "list"
-         list_articles
-       elsif input == "exit"
+       elsif ans == "list"
+         list_top_articles
+       elsif ans == "exit"
          goodbye
        else
          puts "Please give a valid input or type 'list' or 'exit'"
