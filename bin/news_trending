@@ -2,4 +2,4 @@
 
 require './lib/news_trending'
 
-NewsTrending::CLI.new.main_menu
+NewsTrending::CLI.new.call

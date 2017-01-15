@@ -6,8 +6,11 @@ class NewsTrending::Article
     articles = []
 
     articles << NewsTrending::Scraper.scrape_nytimes
-    # articles << NewsTrending::Scraper.scrape_washpost
-    # articles << NewsTrending::Scraper.scrape_buzzfeed_politics
+    articles << NewsTrending::Scraper.scrape_nytimes2
+    articles << NewsTrending::Scraper.scrape_nytimes3
+    articles << NewsTrending::Scraper.scrape_nytimes4
+    articles << NewsTrending::Scraper.scrape_nytimes5
+    articles << NewsTrending::Scraper.scrape_nytimes6
 
     articles
   end

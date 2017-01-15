@@ -1,8 +1,10 @@
-# NewsTrending
+# Welcome to News Trending
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/news_trending`. To experiment with that code, run `bin/console` for an interactive prompt.
+Welcome to your News Trending gem! 
 
-TODO: Delete this and the text above, and describe your gem
+I know most people need information about what's going on the world and being able to have it at your finger tips. I created a gem that would be able to provide you with trending news from politics all the way to sports. Its important to have this on the go and getting to see what happen everyday. 
+
+This gem scraps information from the NYT website and from different section. It returns the most trending article with a summary and a link for the full article.
 
 ## Installation
 

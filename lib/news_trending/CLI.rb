@@ -1,47 +1,49 @@
 class NewsTrending::CLI
 
-  def main_menu
+  def call
+     list_articles
+     puts "---------------------------------"
+     menu
+   end
+
+   def list_articles
+     puts "---------------------------------"
+     puts "| Most Recent Trending News     |"
+     puts "---------------------------------"
+     @articles = NewsTrending::Article.today
+     @articles.each.with_index(1) do |article, i|
+       puts "#{i}. #{article.source} - '#{article.name} - #{article.author}"
+     end
+   end
+
+   def menu
      input = nil
      while input != "exit"
-       puts "Welcome! Which article would you like to read?, Technology or Entertainment? Type 'exit' to exit."
+     puts "Please pick a number for more info about the article, type list to see the articles again, or type exit:"
        input = gets.chomp.downcase
-       case input
-       when "technology", "tech"
-         list_news_technology
-       when "entertainment"
-         list_news_entertainment
-       when "exit"
-         farewell
+
+       if input.to_i > 0
+         the_article = @articles[input.to_i-1]
+         puts "---------------------------------"
+         puts "#{the_article.source}: "
+         puts " "
+         puts "#{the_article.name} - #{the_article.author}"
+         puts " "
+         puts " #{the_article.summary}"
+         puts " "
+         puts "#{the_article.url}"
+         puts "---------------------------------"
+       elsif input == "list"
+         list_articles
+       elsif input == "exit"
+         goodbye
        else
-         puts "Please enter a valid input!"
+         puts "Please give a valid input or type 'list' or 'exit'"
        end
      end
-  end
-end
+   end
 
-def list_news_technology
-   input = nil
-   while input != ("back" || "exit")
-     puts "Which article would you like to read?"
-     puts "Make your selection by typing a number from 1-10. Alternatively, type 'back' to go back to the main menu or 'exit' to exit."
-     input = gets.chomp
-     case input
-     when "1"
-       puts "More details about the article"
-       end
-       puts "Type main menu to return to the list of articles. Alternatively, type 'back' to go back to the main menu or 'exit' to exit."
-       number =gets.chomp
-       if number == "main menu"
-         main_menu
-       elsif number == "back"
-         main_menu
-       elsif number =="exit"
-         farewell
-       else
-        puts "Come back later!!"
-       end
+   def goodbye
+     abort("See you tomorrow!")
    end
  end
- def farewell
-     abort("Thanks for checking us out! See you next time!")
-   end
