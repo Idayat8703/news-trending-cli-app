@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
-require './lib/news_trending'
+require 'pry'
+require_relative '../lib/news_trending'
 
 NewsTrending::CLI.new.call

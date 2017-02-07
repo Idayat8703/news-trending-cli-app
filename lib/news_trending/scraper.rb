@@ -1,6 +1,16 @@
 class NewsTrending::Scraper
 
   # scrapes and returns intial info about the most recent news from various sections on the nytimes website
+
+  def self.scrape_articles
+    self.scrape_nytimes1
+    self.scrape_nytimes2
+    self.scrape_nytimes3
+    self.scrape_nytimes4
+    self.scrape_nytimes5
+    self.scrape_nytimes6
+    #finish calling the other methods in this class
+  end
   def self.scrape_nytimes1
     doc = Nokogiri::HTML(open("https://www.nytimes.com/section/technology?WT.nav=page&action=click&contentCollection=Tech&module=HPMiniNav&pgtype=Homepage&region=TopBar"))
 
@@ -10,7 +20,7 @@ class NewsTrending::Scraper
     article.summary = doc.search("p.summary").first.text.strip
     article.url = doc.search("h2.headline a").first.attr("href").strip
     article.source = "The New York Times"
-    article
+
   end
 
   def self.scrape_nytimes2
@@ -21,7 +31,7 @@ class NewsTrending::Scraper
     article.summary = doc.search("p.summary").first.text.strip
     article.url = doc.search("h2 a").first.attr("href").strip
     article.source = "The New York Times"
-    article
+
   end
 
   def self.scrape_nytimes3
@@ -32,7 +42,7 @@ class NewsTrending::Scraper
     article.summary = doc.search("p.summary").first.text.strip
     article.url = doc.search("h2.headline a").first.attr("href").strip
     article.source = "The New York Times"
-    article
+
   end
 
   def self.scrape_nytimes4
@@ -43,7 +53,7 @@ class NewsTrending::Scraper
     article.summary = doc.search("p.summary").first.text.strip
     article.url = doc.search("h3 a").first.attr("href").strip
     article.source = "The New York Times"
-    article
+
   end
 
   def self.scrape_nytimes5
@@ -54,7 +64,7 @@ class NewsTrending::Scraper
     article.summary = doc.search("p.summary").first.text.strip
     article.url = doc.search("h2.headline a").first.attr("href").strip
     article.source = "The New York Times"
-    article
+
   end
 
   def self.scrape_nytimes6
@@ -66,6 +76,6 @@ class NewsTrending::Scraper
     article.url = doc.search("h2.headline a").first.attr("href").strip
 
     article.source = "The New York Times"
-    article
+
   end
 end
