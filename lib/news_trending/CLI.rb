@@ -18,7 +18,7 @@ class NewsTrending::CLI
    end
 
    def main_menu
-     #ask user for input about the articlethey would like to read
+     #ask user for input about the article they would like to read
      #returns the information for the user
      # allows the user to diplay the articles again or to exit. 
      ans = nil
