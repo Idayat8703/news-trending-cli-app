@@ -30,7 +30,7 @@ class NewsTrending::Scraper
     article.name = doc.search(".headline").first.text.strip
     article.author = doc.search(".byline").first.text.strip
     article.summary = doc.search("p.summary").first.text.strip
-    article.url = doc.search("h2 a").first.attr("href").strip
+    article.url = doc.search("h2.headline a").first.attr("href").strip
     article.source = "The New York Times"
     article
   end
@@ -52,7 +52,7 @@ class NewsTrending::Scraper
     article.name = doc.search(".headline").first.text.strip
     article.author = doc.search(".byline").first.text.strip
     article.summary = doc.search("p.summary").first.text.strip
-    article.url = doc.search("h2 a").first.text.strip
+    article.url = doc.search("h2.headline a").first.attr("href").strip
     article.source = "The New York Times"
     article
   end
@@ -63,7 +63,7 @@ class NewsTrending::Scraper
     article.name = doc.search(".headline").first.text.strip
     article.author = doc.search(".byline").first.text.strip
     article.summary = doc.search("p.summary").first.text.strip
-    article.url = doc.search("h2 a").first.attr("href").strip
+    article.url = doc.search("h2.headline a").first.attr("href").strip
 
     article.source = "The New York Times"
     article
