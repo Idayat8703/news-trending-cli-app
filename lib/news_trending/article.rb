@@ -4,7 +4,7 @@ class NewsTrending::Article
 
   @@all = []
 
-  def initialize
+  def initialize (name: "name" , author: "author", summary: "summary", url: "url", source: "source " )
       @name = name
       @author =author
       @summary =summary
