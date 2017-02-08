@@ -26,7 +26,7 @@ class NewsTrending::CLI
      puts "Please pick a number for more info about the article, type list to see the articles again, or type exit:"
        ans = gets.chomp.downcase
 
-       if ans.to_i > 0
+       if ans.to_i > 1 && ans.to_i <=6
          the_first_article = NewsTrending::Article.info[ans.to_i-1]
          puts "---------------------------------"
          puts "#{the_first_article.source}: "
@@ -41,8 +41,8 @@ class NewsTrending::CLI
          list_top_articles
        elsif ans == "exit"
          goodbye
-       else
-         list_top_articles
+       else 
+         puts "Please make a valid input"
        end
      end
    end
