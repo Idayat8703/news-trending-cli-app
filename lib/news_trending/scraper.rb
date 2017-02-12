@@ -14,12 +14,13 @@ class NewsTrending::Scraper
   def self.scrape_nytimes1
     doc = Nokogiri::HTML(open("https://www.nytimes.com/section/technology?WT.nav=page&action=click&contentCollection=Tech&module=HPMiniNav&pgtype=Homepage&region=TopBar"))
 
-    article = NewsTrending::Article.new
-    article.name = doc.search(".headline").first.text.strip
-    article.author = doc.search(".byline").first.text.strip
-    article.summary = doc.search("p.summary").first.text.strip
-    article.url = doc.search("h2.headline a").first.attr("href").strip
-    article.source = "The New York Times"
+    #article = NewsTrending::Article.new
+    name = doc.search(".headline").first.text.strip
+    author = doc.search(".byline").first.text.strip
+    summary = doc.search("p.summary").first.text.strip
+    url = doc.search("h2.headline a").first.attr("href").strip
+    source = "The New York Times"
+    NewsTrending::Article.new(name, author, summary, url, source)
 
   end
 

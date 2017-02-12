@@ -3,8 +3,9 @@ class NewsTrending::Article
   attr_accessor :name, :author, :summary, :url, :source
 
   @@all = []
+  #@@all = [Article1, Article 2, Article]
 
-  def initialize (name: "name" , author: "author", summary: "summary", url: "url", source: "source " )
+  def initialize (name = nil  , author = nil, summary = nil, url = nil , source = nil )
       @name = name
       @author =author
       @summary =summary
@@ -18,9 +19,14 @@ class NewsTrending::Article
    @@all
   end
 
-  def self.info
-      all
+  # def self.info
+  #     all
+  # end
+
+  def self.find_by_index(index)
+    @@all[index]
   end
+
 
   #define a class variable to collect all instances of article
 
